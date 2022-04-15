@@ -1,0 +1,27 @@
+.banner-container{
+    position: relative;
+}
+.search-field{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 40%;
+}
+.search-field input {
+    padding: 5px 15px;
+    background-color: transparent;
+    border-top-left-radius: 55px;
+    border-bottom-left-radius: 55px;
+    border: 0.5px solid gray;
+}
+.search-field button{
+    border-top-right-radius: 55px;
+    border-bottom-right-radius: 55px;
+    padding: 5px 15px;
+    background-color: #fb073f;
+    border: 0;
+    color: white;
+    outline: none;
+}

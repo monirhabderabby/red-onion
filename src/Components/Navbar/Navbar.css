@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar{
+    height: 80px;
+}
+.navbar img{
+    height: 30px;
+}
+.signup{
+    background-color: #fb073f;
+    color: white;
+    border-radius: 55px;
+    padding: 5px 15px;
+}
+.icon p{
+    margin-left: 30px;
+}

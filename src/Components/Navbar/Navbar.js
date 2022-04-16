@@ -9,7 +9,7 @@ const Navbar = () => {
     return (
         <nav className='container d-flex justify-content-between align-items-center navbar'>
             <div>
-                <img src={logo} alt="" />
+                <Link to={'/'}><img src={logo} alt="" /></Link>
             </div>
             <div className='d-flex align-items-center icons'>
                 <Link to={'/cart'} className='icon'><FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon></Link>

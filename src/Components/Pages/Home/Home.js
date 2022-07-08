@@ -1,7 +1,9 @@
+import FoodItems from "./FoodItems/FoodItems";
+
 const Home = () => {
     return (
         <div className="">
-            <button class="btn btn-primary">Button</button>
+            <FoodItems />
         </div>
     );
 };

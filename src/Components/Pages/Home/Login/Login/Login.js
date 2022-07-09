@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import auth from "../../../../../firebase.init";
 
 const Login = () => {
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const {
     register,
     formState: { errors },
@@ -13,6 +16,17 @@ const Login = () => {
     console.log(data);
     event.target.reset();
   };
+
+  let errorMessages;
+
+  if(gError){
+    errorMessages = <p className="text-red-500 text-xs">{gError?.message}</p>
+  }
+
+
+  // if(loading || gLoading){
+  //     return <LoadingSpinner></LoadingSpinner>
+  // }
 
   return (
     <div
@@ -78,6 +92,8 @@ const Login = () => {
               </small>
             </p>
 
+            {errorMessages}
+
             <input
               class="btn btn-dark btn-sm text-xs w-5/6 mx-auto"
               type="submit"
@@ -86,7 +102,7 @@ const Login = () => {
 
             <div class="divider w-4/5 mx-auto">OR</div>
             <div>
-              <button class="btn btn-outline btn-dark btn-sm">
+              <button onClick={() => signInWithGoogle()} class="btn btn-outline btn-dark btn-sm">
                 <img
                   width="24"
                   src="https://i.ibb.co/h9DDdjT/google.png"
@@ -95,7 +111,7 @@ const Login = () => {
                 <span className="pl-1 text-xs">Google Login</span>
               </button>
             </div>
-            <div className="mt-4">
+            <div className="mt-2">
               <p>
                 <small>
                   Don't have an account?{" "}

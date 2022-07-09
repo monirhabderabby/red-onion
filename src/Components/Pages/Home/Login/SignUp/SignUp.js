@@ -1,56 +1,55 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import {
+  useCreateUserWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import auth from "../../../../../firebase.init";
 import LoadSpinner from "../LoadSpinner/LoadSpinner";
 
 const SignUp = () => {
-    const [
-        createUserWithEmailAndPassword,
-        user,
-        loading,
-        error,
-      ] = useCreateUserWithEmailAndPassword(auth);
-    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
-    const {
-        register,
-        formState: { errors },
-        handleSubmit,
-      } = useForm();
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
+  let errorMessages;
 
-    let errorMessages;
+  if (user || gUser) {
+    console.log(user || gUser);
+    navigate("/");
+  }
 
-    if(user || gUser){
-      console.log(user || gUser);
-      navigate('/');
-    }
-  
-    if(error || gError){
-      errorMessages = <p className="text-red-500 text-xs">{error?.message || gError?.message}</p>
-    }
-  
-  
-    if(loading || gLoading){
-        return <LoadSpinner></LoadSpinner>
-    }
+  if (error || gError) {
+    errorMessages = (
+      <p className="text-red-500 text-xs">
+        {error?.message || gError?.message}
+      </p>
+    );
+  }
 
-  const onSubmit = (data,event) => {
+  if (loading || gLoading) {
+    return <LoadSpinner></LoadSpinner>;
+  }
+
+  const onSubmit = (data, event) => {
     console.log(data);
-    if(data.password === data.confirm_password){
-        createUserWithEmailAndPassword(data.email,data.password);
-    }else{
-        alert('password did not match');
+    if (data.password === data.confirm_password) {
+      createUserWithEmailAndPassword(data.email, data.password);
+    } else {
+      alert("password did not match");
     }
-    
+
     event.target.reset();
   };
-
- 
 
   return (
     <div
@@ -67,7 +66,7 @@ const SignUp = () => {
           <img
             className="rounded-md"
             width="550"
-            src="https://i.ibb.co/CzjhYMN/6300830.jpg"
+            src="https://i.ibb.co/hmPVvph/6333050.jpg"
             alt=""
           />
         </div>
@@ -120,14 +119,17 @@ const SignUp = () => {
             {errorMessages}
 
             <input
-              class="btn btn-dark btn-sm text-xs w-5/6 mx-auto mt-1"
+              className="btn btn-dark btn-sm text-xs w-5/6 mx-auto mt-1"
               type="submit"
               value="Sign Up"
             />
 
-            <div class="divider w-4/5 mx-auto">OR</div>
+            <div className="divider w-4/5 mx-auto">OR</div>
             <div>
-              <button onClick={() => signInWithGoogle()} class="btn btn-outline btn-dark btn-sm">
+              <button
+                onClick={() => signInWithGoogle()}
+                className="btn btn-outline btn-dark btn-sm"
+              >
                 <img
                   width="24"
                   src="https://i.ibb.co/h9DDdjT/google.png"
@@ -163,10 +165,10 @@ const SignUp = () => {
             id=""
           />
           <p className="text-right mb-3"><small>Forgot Password? <span className="text-red-600"><Link to=''>Reset</Link></span></small></p>
-          <button class="btn btn-dark btn-sm text-xs w-full mx-auto">Login</button>
-          <div class="divider">OR</div>
+          <button className="btn btn-dark btn-sm text-xs w-full mx-auto">Login</button>
+          <div className="divider">OR</div>
           <div>
-            <button class="btn btn-outline btn-dark btn-sm">
+            <button className="btn btn-outline btn-dark btn-sm">
               <img
                 width="24"
                 src="https://i.ibb.co/h9DDdjT/google.png"

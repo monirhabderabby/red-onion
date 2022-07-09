@@ -1,14 +1,24 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import auth from "../../../../../firebase.init";
 import LoadSpinner from "../LoadSpinner/LoadSpinner";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+import { useRef } from "react";
 
 const Login = () => {
+  const emailRef = useRef("");
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+  const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
   const {
     register,
     formState: { errors },
@@ -19,22 +29,36 @@ const Login = () => {
 
   let errorMessages;
 
-  if(user || gUser){
-    navigate('/');
+  if (user || gUser) {
+    navigate("/");
   }
 
-  if(error || gError){
-    errorMessages = <p className="text-red-500 text-xs">{error?.message || gError?.message}</p>
+  if (error || gError) {
+    errorMessages = (
+      <p className="text-red-500 text-xs">
+        {error?.message || gError?.message}
+      </p>
+    );
   }
 
-  if(loading || gLoading){
-      return <LoadSpinner></LoadSpinner>
+  if (loading || gLoading) {
+    return <LoadSpinner></LoadSpinner>;
   }
 
-  const onSubmit = (data,event) => {
+  const onSubmit = (data, event) => {
     console.log(data);
-    signInWithEmailAndPassword(data.email,data.password);
+    signInWithEmailAndPassword(data.email, data.password);
     event.target.reset();
+  };
+
+  const handleReset = async () => {
+    const email = emailRef.current?.value;
+    await sendPasswordResetEmail(email);
+    if (email) {
+      toast.success("reset email send");
+    } else {
+      toast.error("please enter your email");
+    }
   };
 
   return (
@@ -62,6 +86,7 @@ const Login = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
             <input
               placeholder="Enter Your Email"
+              ref={emailRef}
               className="mb-1 w-60 h-8 bg-slate-50 text-xs pl-2 rounded-md"
               {...register("email", { required: true })}
             />
@@ -96,7 +121,9 @@ const Login = () => {
               <small>
                 Forgot Password?{" "}
                 <span className="text-red-600">
-                  <Link to="">Reset</Link>
+                  <Link to="" onClick={handleReset}>
+                    Reset
+                  </Link>
                 </span>
               </small>
             </p>
@@ -104,14 +131,17 @@ const Login = () => {
             {errorMessages}
 
             <input
-              class="btn btn-dark btn-sm text-xs w-5/6 mx-auto mt-1"
+              className="btn btn-dark btn-sm text-xs w-5/6 mx-auto mt-1"
               type="submit"
               value="Login"
             />
 
-            <div class="divider w-4/5 mx-auto">OR</div>
+            <div className="divider w-4/5 mx-auto">OR</div>
             <div>
-              <button onClick={() => signInWithGoogle()} class="btn btn-outline btn-dark btn-sm">
+              <button
+                onClick={() => signInWithGoogle()}
+                className="btn btn-outline btn-dark btn-sm"
+              >
                 <img
                   width="24"
                   src="https://i.ibb.co/h9DDdjT/google.png"
@@ -147,10 +177,10 @@ const Login = () => {
             id=""
           />
           <p className="text-right mb-3"><small>Forgot Password? <span className="text-red-600"><Link to=''>Reset</Link></span></small></p>
-          <button class="btn btn-dark btn-sm text-xs w-full mx-auto">Login</button>
-          <div class="divider">OR</div>
+          <button className="btn btn-dark btn-sm text-xs w-full mx-auto">Login</button>
+          <div className="divider">OR</div>
           <div>
-            <button class="btn btn-outline btn-dark btn-sm">
+            <button className="btn btn-outline btn-dark btn-sm">
               <img
                 width="24"
                 src="https://i.ibb.co/h9DDdjT/google.png"
@@ -164,6 +194,7 @@ const Login = () => {
           </div> */}
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

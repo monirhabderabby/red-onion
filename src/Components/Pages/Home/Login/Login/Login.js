@@ -9,12 +9,10 @@ import {
 import auth from "../../../../../firebase.init";
 import LoadSpinner from "../LoadSpinner/LoadSpinner";
 import { ToastContainer, toast } from "react-toastify";
-
 import "react-toastify/dist/ReactToastify.css";
-import { useRef } from "react";
+import { async } from "@firebase/util";
 
 const Login = () => {
-  const emailRef = useRef("");
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -23,6 +21,7 @@ const Login = () => {
     register,
     formState: { errors },
     handleSubmit,
+    getValues,
   } = useForm();
 
   const navigate = useNavigate();
@@ -52,9 +51,9 @@ const Login = () => {
   };
 
   const handleReset = async () => {
-    const email = emailRef.current?.value;
-    await sendPasswordResetEmail(email);
-    if (email) {
+    const emailValues = getValues("email");
+    await sendPasswordResetEmail(emailValues);
+    if (emailValues) {
       toast.success("reset email send");
     } else {
       toast.error("please enter your email");
@@ -86,7 +85,6 @@ const Login = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
             <input
               placeholder="Enter Your Email"
-              ref={emailRef}
               className="mb-1 w-60 h-8 bg-slate-50 text-xs pl-2 rounded-md"
               {...register("email", { required: true })}
             />
@@ -161,37 +159,6 @@ const Login = () => {
               </p>
             </div>
           </form>
-
-          {/* <input
-            className="mb-2 w-60 h-8 bg-slate-50 text-xs pl-2 rounded-md"
-            placeholder="Enter Your Email"
-            type="email"
-            name=""
-            id=""
-          />
-          <input
-            className=" w-60 bg-slate-50 h-8 text-xs pl-2 rounded-md"
-            placeholder="Enter Your Password"
-            type="password"
-            name=""
-            id=""
-          />
-          <p className="text-right mb-3"><small>Forgot Password? <span className="text-red-600"><Link to=''>Reset</Link></span></small></p>
-          <button className="btn btn-dark btn-sm text-xs w-full mx-auto">Login</button>
-          <div className="divider">OR</div>
-          <div>
-            <button className="btn btn-outline btn-dark btn-sm">
-              <img
-                width="24"
-                src="https://i.ibb.co/h9DDdjT/google.png"
-                alt=""
-              />
-              <span className="pl-1 text-xs">Google Login</span>
-            </button>
-          </div>
-          <div className="mt-4">
-            <p><small>Don't have an account? <span className="text-red-600"><Link to='/signup'>Create Account</Link></span></small></p>
-          </div> */}
         </div>
       </div>
       <ToastContainer></ToastContainer>

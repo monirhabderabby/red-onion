@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import auth from "../../../../../firebase.init";
@@ -20,11 +20,14 @@ const SignUp = () => {
         handleSubmit,
       } = useForm();
 
+    const navigate = useNavigate();
+
 
     let errorMessages;
 
     if(user || gUser){
       console.log(user || gUser);
+      navigate('/');
     }
   
     if(error || gError){

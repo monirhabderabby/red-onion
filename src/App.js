@@ -1,10 +1,10 @@
+import "react-loading-skeleton/dist/skeleton.css";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Breakfast from "./Components/Pages/Home/FoodItems/Breakfast";
 import Dinner from "./Components/Pages/Home/FoodItems/Dinner";
 import Lunch from "./Components/Pages/Home/FoodItems/Lunch";
 import Home from "./Components/Pages/Home/Home";
-
 function App() {
     return (
         <div className="App">

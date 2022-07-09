@@ -1,0 +1,23 @@
+[
+    {
+        "name": "baked-chicken-wings",
+        "description": "We oven-bake tender chicken wings slowly until the skin is crisp and the meat is juicy. The wings are prepped with a tasty rub of salt, garlic powder, paprika, and savory herbs, so that they're extra delicious. Great for kids or casual get-togethers, these wings make perfect party food.",
+        "price": "5",
+        "image": "https://i.ibb.co/BfNh7nw/baked-chicken-wings-asian-style-tomatoes-sauce-plate.jpg",
+        "id": "1"
+    },
+    {
+        "name": "vegetables-cutlery-salad",
+        "description": "DELICIOUS SALAD & VEGETABLE SEASONING | When your favorite recipe calls for vegetable broth or bouillon, reach for easy-to-use, super-flavorful GOYA Salad and Vegetable Seasoning. Goya Salad and Vegetable Seasoning comes as a powder and is excellent as a base for soups; on chicken, meat and rice dishes, and even to make savory gravies. Great flavor, at your fingertips!",
+        "price": "3",
+        "image": "https://i.ibb.co/p03240J/close-up-view-fresh-black-yellow-olives-chopped-vegetables-cutlery-set-white-plate-black-background.jpg",
+        "id": "2"
+    },
+    {
+        "name": "club sandwich",
+        "description": "Now, coming to this recipe, there is a particular group of people who made it special for me. There is this small restaurant here in Bahrain, which is one of the oldest (from what I understand) and tucked away in the heart of the business district and they’re known for their sandwiches, especially, The Club Sandwich.",
+        "price": "2.5",
+        "image": "https://i.ibb.co/TYVfHHs/club-sandwich-panini-with-ham-cheese-tomato-herbs.jpg",
+        "id": 3
+    }
+]

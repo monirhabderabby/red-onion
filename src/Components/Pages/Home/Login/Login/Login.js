@@ -18,31 +18,32 @@ const Login = () => {
           <img className="rounded-md" width="350" src="https://i.ibb.co/CzjhYMN/6300830.jpg" alt="" />
         </div>
         <div className="flex flex-col ml-10">
-          <h2 className="text-3xl mb-6 font-bold">Login</h2>
+          <h2 className="text-3xl mb-5 mt-2 font-bold">Login</h2>
           <input
-            className="mb-2 w-60 h-10 bg-slate-50 text-xs pl-2 rounded-md"
+            className="mb-2 w-60 h-8 bg-slate-50 text-xs pl-2 rounded-md"
             placeholder="Enter Your Email"
             type="email"
             name=""
             id=""
           />
           <input
-            className="mb-3 w-60 bg-slate-50 h-10 text-xs pl-2 rounded-md"
+            className=" w-60 bg-slate-50 h-8 text-xs pl-2 rounded-md"
             placeholder="Enter Your Password"
             type="password"
             name=""
             id=""
           />
-          <button class="btn btn-dark">Login</button>
+          <p className="text-right mb-3"><small>Forgot Password? <span className="text-red-600">Reset</span></small></p>
+          <button class="btn btn-dark btn-sm text-xs w-full mx-auto">Login</button>
           <div class="divider">OR</div>
           <div>
-            <button class="btn btn-outline btn-dark ">
+            <button class="btn btn-outline btn-dark btn-sm">
               <img
-                width="32"
+                width="24"
                 src="https://i.ibb.co/h9DDdjT/google.png"
                 alt=""
               />
-              <span className="pl-1">Google Login</span>
+              <span className="pl-1 text-xs">Google Login</span>
             </button>
           </div>
           <div className="mt-4">

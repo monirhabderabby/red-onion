@@ -62,6 +62,7 @@ const Login = () => {
 
   return (
     <div
+      className="px-4 lg:px-0"
       style={{
         backgroundImage: "url('https://i.ibb.co/9G8dvFg/bannerbackground.png')",
         backgroundPosition: "center",
@@ -70,16 +71,16 @@ const Login = () => {
         paddingTop: "150px",
       }}
     >
-      <div className="bg-slate-200 w-3/6 h-96 mx-auto flex px-6 items-center rounded-md">
+      <div className="bg-slate-200 w-full lg:w-3/6 h-96 mx-auto pt-8 md:pt-0 lg:pt-0 block md:flex lg:flex px-12 md:px-10 lg:px-6 items-center rounded-md">
         <div>
           <img
-            className="rounded-md"
+            className="rounded-md hidden md:w-5/6 lg:w-auto md:block lg:block"
             width="550"
             src="https://i.ibb.co/CzjhYMN/6300830.jpg"
             alt=""
           />
         </div>
-        <div className="flex flex-col ml-10">
+        <div className="flex flex-col lg:ml-10">
           <h2 className="text-3xl mb-5 mt-2 font-bold">Login</h2>
 
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -115,7 +116,7 @@ const Login = () => {
               </small>
             </p>
 
-            <p className=" text-right  mb-3">
+            <p className=" text-right mr-5 md:mr-0 lg:mr-0 mb-3">
               <small>
                 Forgot Password?{" "}
                 <span className="text-red-600">

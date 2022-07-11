@@ -1,4 +1,3 @@
-import "react-loading-skeleton/dist/skeleton.css";
 import { useQuery } from "react-query";
 import FoodCard from "../../../Shared/FoodCard";
 

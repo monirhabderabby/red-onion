@@ -1,5 +1,11 @@
+import FoodItems from "./FoodItems/FoodItems";
+
 const Home = () => {
-    return <div className="text-5xl">This is Home</div>;
+    return (
+        <div className="">
+            <FoodItems />
+        </div>
+    );
 };
 
 export default Home;

@@ -29,7 +29,7 @@ const Login = () => {
     let errorMessages;
 
     if (user || gUser) {
-        navigate("/");
+        navigate("/home");
     }
 
     if (error || gError) {

@@ -15,9 +15,8 @@ function App() {
             <Routes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
-                =======
                 <Route path="/" element={<Home />}>
-                    <Route path="/" element={<Breakfast />}></Route>
+                    <Route index element={<Breakfast />} />
                     <Route path="lunch" element={<Lunch />}></Route>
                     <Route path="dinner" element={<Dinner />}></Route>
                 </Route>

@@ -5,7 +5,7 @@ const FoodItems = () => {
         <div>
             <div className="flex justify-center mt-12">
                 <NavLink
-                    to="breakfast"
+                    to="/"
                     className={({ isActive }) =>
                         isActive
                             ? "text-primary mx-3 border-b-4 border-primary"

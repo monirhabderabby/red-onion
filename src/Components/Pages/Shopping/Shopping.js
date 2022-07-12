@@ -81,7 +81,7 @@ const Shopping = () => {
                         </div>
                     </div>
                     <div className="food-price">
-                        <div className='food-price-details'><span>Subtotal- 4 items</span><span>$320.00</span> </div>   
+                        <div className='food-price-details'><span>Subtotal- 5 items</span><span>$320.00</span> </div>   
                         <div className='food-price-details'><span>Tax</span><span>$5.00</span> </div> 
                         <div className='food-price-details'><span>Delivery Cost</span><span>$0.00</span> </div> 
                         <div className='food-price-details'><span>Total</span><span>$325.00</span> </div>

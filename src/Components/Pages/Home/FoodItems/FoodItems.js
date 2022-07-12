@@ -2,7 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 
 const FoodItems = () => {
     return (
-        <div>
+        <div className="bg-white">
             <div className="flex justify-center mt-12">
                 <NavLink
                     to="/"

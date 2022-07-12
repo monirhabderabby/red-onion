@@ -9,7 +9,7 @@ import SignUp from "./Components/Pages/Home/Login/SignUp/SignUp";
 
 function App() {
     return (
-        <div className="App">
+        <div className="App bg-white">
             <Routes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />

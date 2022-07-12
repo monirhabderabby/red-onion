@@ -12,6 +12,7 @@ function App() {
     return (
         <div className="App">
             <Header></Header>
+            
             <Routes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />

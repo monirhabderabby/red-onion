@@ -1,7 +1,14 @@
-import React from "react";
+import React from 'react';
+import Bannar from './Bannar';
+import Menu from './Menu';
 
 const Header = () => {
-    return <div></div>;
+    return (
+    <div>
+        <Menu></Menu>
+        <Bannar></Bannar>
+    </div>
+    );
 };
 
 export default Header;

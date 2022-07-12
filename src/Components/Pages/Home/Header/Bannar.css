@@ -1,0 +1,15 @@
+
+.bannarbg{
+    background-image: 
+    url(
+  "../../../../images/bannerbackground.png");
+    background-size:100%;
+    height: 80vh;
+    background-repeat:no-repeat; 
+  }
+  .search-box{
+    color: #ffffff;
+    background-color: #F91944;
+    padding-left: 20px;
+    padding-right: 20px;
+  }

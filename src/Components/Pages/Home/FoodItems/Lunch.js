@@ -5,12 +5,6 @@ const Lunch = () => {
     const { data: foods, isLoading } = useQuery("lunch", () =>
         fetch("breakfast.json").then((res) => res.json())
     );
-    // const [foods, setFoods] = useState([]);
-    // useEffect(() => {
-    //     fetch("breakfast.json")
-    //         .then((res) => res.json())
-    //         .then((data) => setFoods(data));
-    // }, []);
     return (
         <div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">

@@ -5,7 +5,6 @@ const FoodCard = ({ food, isLoading }) => {
     const navigate = useNavigate();
 
     const handleDetails = () => {
-        console.log(food.id);
         navigate(`/foodDetails/${food.id}`);
     }
 

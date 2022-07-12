@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
 import { useParams } from 'react-router-dom';
+import LoadSpinner from "../Pages/Home/Login/LoadSpinner/LoadSpinner";
 
 const FoodDetails = () => {
     const { id } = useParams();
@@ -11,11 +12,11 @@ const FoodDetails = () => {
     );
 
     if (isLoading) {
-        return;
+        return <LoadSpinner></LoadSpinner>;
     };
-    console.log(foods, isLoading, id);
+
     const selectedFood = foods.find(food => parseInt(food.id) === parseInt(id))
-    console.log(selectedFood)
+
     return (
         <div class="hero min-h-screen">
             <div class="hero-content flex-col lg:flex-row-reverse">

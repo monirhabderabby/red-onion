@@ -1,0 +1,142 @@
+.menu-name span{
+    padding-right: 75px;
+}
+.shopping-order-details{
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.shopping{
+    width: 50%;
+}
+.shopping p{
+    text-align: left;
+    padding-bottom: 12px;
+}
+.delivery-address-field input{
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin: 5px 0;
+}
+.delivery-address-field textarea{
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin: 5px 0;
+}
+.save-btn input{
+    background-color: #DC2626;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+}
+.order{
+        width: 35%;
+}
+.food-details{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 8px;
+}
+.food-details img{
+    width: 70px;
+}
+.food-name{
+    margin-left: 10px;
+}
+.food-price{
+    text-align: left;
+    margin-top: 35px;
+}
+.food-price button{
+    background-color: gray;
+    padding: 6px 80px;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+.food-price-details{
+    display: flex;
+    justify-content: space-between
+}
+.address{
+    text-align: left;
+    margin-bottom: 40px;
+}
+.button-increment-decrement{
+    display: flex;
+    align-items: center;
+}
+.food-price button{
+    margin-bottom: 100px;
+}
+
+/* 376px to Max- 425px Mobile View */
+@media only screen and (max-width: 425px) {
+    .shopping-order-details {
+        /* width: 70%; */
+        /* margin: auto; */
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .delivery-address-field input {
+        width: 200%;
+        border-radius: 5px;
+        padding: 10px 10px;
+        margin: 5px 0;
+    }
+    .delivery-address-field textarea {
+        width: 200%;
+        border-radius: 5px;
+        padding: 10px 10px;
+        margin: 5px 0;
+    }
+    .order {
+        width: 100%;
+    }
+    .food-price button{
+        margin-bottom: 100px;
+    }
+}
+/* 426px to Max- 768px Mobile View */
+@media only screen and (min-width:426px) and (max-width:768px) {
+    .shopping-order-details {
+        /* width: 70%; */
+        /* margin: auto; */
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .delivery-address-field input {
+        width: 200%;
+        border-radius: 5px;
+        padding: 10px 10px;
+        margin: 5px 0;
+    }
+    .delivery-address-field textarea {
+        width: 200%;
+        border-radius: 5px;
+        padding: 10px 10px;
+        margin: 5px 0;
+    }
+    .order {
+        width: 100%;
+    }
+    .food-price button{
+        margin-bottom: 100px;
+    }
+}
+/* 769px to Max- 992px Tablet View */
+@media only screen and (min-width:769px) and (max-width:992px) {
+    .order {
+        width: 40%;
+    }
+}

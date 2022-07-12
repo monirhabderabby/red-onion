@@ -63,7 +63,7 @@ const Header = () => {
             <div class="navbar-end hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">
                     <li>
-                        <Link to="/shoping">
+                        <Link to="/shopping">
                             <label
                                 tabindex="0"
                                 class="btn btn-ghost btn-circle"

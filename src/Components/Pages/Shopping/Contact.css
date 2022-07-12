@@ -1,0 +1,140 @@
+.map-contact-area {
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.map {
+    width: 55%;
+    border: 1px solid #d4d3d3;
+    border-radius: 15px;
+}
+.map img{
+    border-radius: 15px;
+}
+
+.contact {
+    width: 30%;
+    background-color: #d4d3d3;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.contact img {
+    width: 75px;
+    margin-bottom: 15px;
+}
+
+.vl {
+    border-left: 2px solid #a7a7a7;
+    height: 70px;
+    margin: -31px 0 -9px 0;
+}
+.point ul li{
+    list-style: circle;
+    margin-left: 16px;
+    text-align: left;
+}
+.point p{
+    text-align: left;
+    padding-left: 15px;
+}
+.point{
+    background-color: #fff;
+    padding: 5px 5px 5px 15px;
+    border-radius: 10px;
+}
+.raider-details{
+    display: flex;
+    gap: 10px;
+    background-color: #fff;
+    margin-top: 5px;
+    border-radius: 10px;
+}
+.raider-details-text h2{
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+.delivery-time h2{
+    font-size: 36px;
+    font-weight: 500;
+}
+.raider-icon-img img{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.contact-btn{
+    margin-top: 10px;
+    background-color: #DC2626;
+    padding: 5px 0;
+    border-radius: 8px;
+    color: #fff;
+}
+
+/* 376px to Max- 425px Mobile View */
+@media only screen and (max-width: 425px) {
+    .map-contact-area {
+        width: 100%;
+        margin: auto;
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 50px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .map {
+        width: 90%;
+        border: 1px solid #d4d3d3;
+        border-radius: 15px;
+    }
+    .contact {
+        width: 90%;
+        background-color: #d4d3d3;
+        padding: 15px;
+        border-radius: 10px;
+    }
+}
+/* 426px to Max- 768px Mobile View */
+@media only screen and (min-width:426px) and (max-width:768px) {
+    .map-contact-area {
+        width: 100%;
+        margin: auto;
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 50px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .map {
+        width: 90%;
+        border: 1px solid #d4d3d3;
+        border-radius: 15px;
+    }
+    .contact {
+        width: 90%;
+        background-color: #d4d3d3;
+        padding: 15px;
+        border-radius: 10px;
+    }
+}
+/* 769px to Max- 992px Tablet View */
+@media only screen and (min-width:769px) and (max-width:992px) {
+    .contact {
+        width: 35%;
+        background-color: #d4d3d3;
+        padding: 15px;
+        border-radius: 10px;
+    }
+}

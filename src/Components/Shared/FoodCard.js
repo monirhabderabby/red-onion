@@ -1,12 +1,19 @@
+import { useNavigate } from "react-router-dom";
 import LoadSpinner from "../Pages/Home/Login/LoadSpinner/LoadSpinner";
 
 const FoodCard = ({ food, isLoading }) => {
+    const navigate = useNavigate();
+
+    const handleDetails = () => {
+        navigate(`/foodDetails/${food.id}`);
+    }
+
     return (
         <>
             {isLoading ? (
                 <LoadSpinner />
             ) : (
-                <div className="flex flex-col justify-center sm:max-w-sm md:max-w-md mx-auto p-6 hover:shadow-2xl transition duration-500 rounded-sm">
+                <div onClick={handleDetails} className="flex flex-col justify-center sm:max-w-sm md:max-w-md mx-auto p-6 hover:shadow-2xl transition duration-500 rounded-sm">
                     <img
                         src={food?.image}
                         alt="food"
